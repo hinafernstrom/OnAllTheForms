@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <script src='script.js'></script>
+  <style>
+    #narration {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: yellow;
+      padding: 10px;
+      text-align: center;
+      font-size: 30px;
+      z-index: 3000;
+      text-shadow: 2px 2px 2px #000; /* Set a higher z-index for the narration */
+    }
+
+    #download{
+      /* bottom: 0; */
+      left: 0;
+      width: 100%;
+      color: yellow;
+      text-align: right;
+      font-size: 14px;
+      padding-right: 10px;
+      z-index: 3000;
+      text-shadow: 1px 1px 1px #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <div id="download">(dowload me as a pdf)</div> -->
+
+  <div id="narration"> This is my collection </div>
+
+  <div id="containerthree"></div>
+  <div id="containertwo"></div>
+  <div id="container"></div>
+  <div id="containerfour"></div>
+
+
+  <script>
+    // Replace the array with your desired narration text
+    var narrationText = [
+      "This is a collection of by digital input and outputs.",
+      "My digital footprint",
+      "Visualized through AI",
+      "My search history",
+      "My are.na channels",
+      "My amazon purchases",
+      "My instagram posts",
+      "My screenshots",
+      "My data.",
+    ];
+  
+    var index = 0;
+    var narrationElement = document.getElementById("narration");
+  
+    function updateNarration() {
+      narrationElement.textContent = narrationText[index];
+      index = (index + 1) % narrationText.length;
+    }
+  
+    // Call updateNarration initially to display the first message
+    updateNarration();
+  
+    // Set an interval to update the narration text every 3 seconds (adjust as needed)
+    setInterval(updateNarration, 5000);
+  </script>
+</body>
+</html>
